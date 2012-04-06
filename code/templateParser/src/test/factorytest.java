@@ -26,7 +26,7 @@ public class factorytest extends TestCase {
 		
 		Factory factory = appfactory.getFactory();
 		test.A a = (A)factory.getbean("a");
-		System.out.println(">>>>>>>>");
+		System.out.println(">>>>>");
 		a.print();
 		a.getC().print();
 		a.getAcsdkfei().privasdf();
