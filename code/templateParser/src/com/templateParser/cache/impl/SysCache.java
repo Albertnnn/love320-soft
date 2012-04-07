@@ -1,9 +1,9 @@
-package com.templateParser.cache.impl;
+package com.templateparser.cache.impl;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.templateParser.cache.Cache;
+import com.templateparser.cache.Cache;
 
 public class SysCache implements Cache {
 	

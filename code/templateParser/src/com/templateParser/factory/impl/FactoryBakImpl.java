@@ -1,4 +1,4 @@
-package com.templateParser.factory.impl;
+package com.templateparser.factory.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,7 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.templateParser.factory.Factory;
+import com.templateparser.factory.Factory;
 
 /*
  * 工厂

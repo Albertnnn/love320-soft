@@ -2,9 +2,9 @@ package test;
 
 import java.io.File;
 
-import com.templateParser.factory.AppFactory;
-import com.templateParser.factory.Factory;
-import com.templateParser.factory.impl.FactoryImpl;
+import com.templateparser.factory.AppFactory;
+import com.templateparser.factory.Factory;
+import com.templateparser.factory.impl.FactoryImpl;
 
 import junit.framework.TestCase;
 

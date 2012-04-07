@@ -1,4 +1,4 @@
-package com.templateParser.cache;
+package com.templateparser.cache;
 
 public interface Cache {
 	Object getObject(String key);//获取缓存对象

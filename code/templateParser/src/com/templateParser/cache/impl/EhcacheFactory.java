@@ -1,6 +1,6 @@
-package com.templateParser.cache.impl;
+package com.templateparser.cache.impl;
 
-import com.templateParser.cache.Cache;
+import com.templateparser.cache.Cache;
 
 public class EhcacheFactory implements Cache{
 
