@@ -1,13 +1,13 @@
-package com.templateParser.factory;
+package com.templateparser.factory;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.templateParser.cache.Cache;
-import com.templateParser.cache.impl.SysCache;
-import com.templateParser.factory.impl.FactoryImpl;
+import com.templateparser.cache.Cache;
+import com.templateparser.cache.impl.SysCache;
+import com.templateparser.factory.impl.FactoryImpl;
 
 public class AppFactory {
 	

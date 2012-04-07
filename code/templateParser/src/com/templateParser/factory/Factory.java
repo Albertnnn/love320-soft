@@ -1,4 +1,4 @@
-package com.templateParser.factory;
+package com.templateparser.factory;
 
 public interface Factory {
 	

@@ -1,4 +1,4 @@
-package com.templateParser.factory.impl;
+package com.templateparser.factory.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.dom4j.Element;
 import org.dom4j.Node;
 
-import com.templateParser.cache.Cache;
-import com.templateParser.factory.Factory;
+import com.templateparser.cache.Cache;
+import com.templateparser.factory.Factory;
 
 /*
  * 工厂
