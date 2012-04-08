@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="love320CMSvn"
+  id="myeclipse.1300087945015"
+  context-root="/love320CMSvn"
+  j2ee-spec="5.0"
+  archive="love320CMSvn.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

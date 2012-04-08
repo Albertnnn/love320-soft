@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:s="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+	default-lazy-init="true">
+
+	<description>SpringSecurity安全配置</description>
+
+	<!-- http安全配置 -->
+	<s:http auto-config="true" use-expressions="true">
+		<s:intercept-url pattern="/css/**" filters="none" />
+		<s:intercept-url pattern="/img/**" filters="none" />
+		<s:intercept-url pattern="/js/**" filters="none" />
+		
+
+		<s:intercept-url pattern="/account/index*" access="hasAnyRole('ROLE_登录权限')" />
+		
+		<s:intercept-url pattern="/account/user!save*" access="hasAnyRole('ROLE_修改用户')" />
+		<s:intercept-url pattern="/account/user!delete*" access="hasAnyRole('ROLE_修改用户')" />
+		<s:intercept-url pattern="/account/user*" access="hasAnyRole('ROLE_浏览用户')" />
+		<s:intercept-url pattern="/account/role!save*" access="hasAnyRole('ROLE_修改角色')" />
+		<s:intercept-url pattern="/account/role!delete*" access="hasAnyRole('ROLE_修改角色')" />
+		<s:intercept-url pattern="/account/role*" access="hasAnyRole('ROLE_浏览角色')" />
+		<s:intercept-url pattern="/account/arctype!save*" access="hasAnyRole('ROLE_修改栏目')" />
+		<s:intercept-url pattern="/account/arctype!delete*" access="hasAnyRole('ROLE_修改栏目')" />
+		<s:intercept-url pattern="/account/arctype*" access="hasAnyRole('ROLE_浏览栏目')" />
+		<s:intercept-url pattern="/account/archives!save*" access="hasAnyRole('ROLE_修改文章')" />
+		<s:intercept-url pattern="/account/archives!delete*" access="hasAnyRole('ROLE_修改文章')" />
+		<s:intercept-url pattern="/account/archives*" access="hasAnyRole('ROLE_浏览文章')" />
+		<s:intercept-url pattern="/account/sgpage*" access="hasAnyRole('ROLE_浏览单页面')" />
+		<s:intercept-url pattern="/account/sgpage!save*" access="hasAnyRole('ROLE_修改单页面')" />
+		<s:intercept-url pattern="/account/sgpage!delete*" access="hasAnyRole('ROLE_修改单页面')" />
+		<s:intercept-url pattern="/account/taglabel*" access="hasAnyRole('ROLE_浏览标签')" />
+		<s:intercept-url pattern="/account/taglabel!save*" access="hasAnyRole('ROLE_修改标签')" />
+		<s:intercept-url pattern="/account/taglabel!delete*" access="hasAnyRole('ROLE_修改标签')" />
+		<s:intercept-url pattern="/account/config*" access="hasAnyRole('ROLE_浏览系统配置')" />
+		<s:intercept-url pattern="/account/config!save*" access="hasAnyRole('ROLE_修改系统配置')" />
+		<s:intercept-url pattern="/account/config!delete*" access="hasAnyRole('ROLE_修改系统配置')" />
+		<s:intercept-url pattern="/account/upcache!*" access="hasAnyRole('ROLE_更新缓存')" />
+		<s:intercept-url pattern="/account/upfile!*" access="hasAnyRole('ROLE_文件上传')" />
+		<s:intercept-url pattern="/account/htmlgenerator!*" access="hasAnyRole('ROLE_生成静态页面')" />
+		<s:intercept-url pattern="/ajax/account/htmlgeneratorajax!*" access="hasAnyRole('ROLE_生成静态页面')" />
+		<!-- 会员 -->
+		<s:intercept-url pattern="/account/member*" access="hasAnyRole('ROLE_浏览会员')" />
+		<s:intercept-url pattern="/account/member!save*" access="hasAnyRole('ROLE_修改会员')" />
+		<s:intercept-url pattern="/account/member!delete*" access="hasAnyRole('ROLE_修改会员')" />
+		<s:intercept-url pattern="/account/membertype*" access="hasAnyRole('ROLE_浏览会员类型')" />
+		<s:intercept-url pattern="/account/membertype!save*" access="hasAnyRole('ROLE_修改会员类型')" />
+		<s:intercept-url pattern="/account/membertype!delete*" access="hasAnyRole('ROLE_修改会员类型')" />
+		<s:intercept-url pattern="/account/memberclass*" access="hasAnyRole('ROLE_浏览班级')" />
+		<s:intercept-url pattern="/account/memberclass!save*" access="hasAnyRole('ROLE_修改班级')" />
+		<s:intercept-url pattern="/account/memberclass!delete*" access="hasAnyRole('ROLE_修改班级')" />
+
+		<s:form-login login-page="/login.action" default-target-url="/account/index.action" authentication-failure-url="/login.action?error=true" />
+		<s:logout logout-success-url="/" />
+	</s:http>
+
+	<!-- 认证配置, 使用userDetailsService提供的用户信息 -->
+	<s:authentication-manager alias="authenticationManager">
+		<s:authentication-provider user-service-ref="userDetailsService">
+			<!-- 明文密码
+			<s:password-encoder hash="plaintext" />
+			-->
+			<s:password-encoder hash="sha" />
+		</s:authentication-provider>
+	</s:authentication-manager>
+
+	<!-- 项目实现的用户查询服务 -->
+	<bean id="userDetailsService" class="cms.service.account.UserDetailsServiceImpl" />
+	
+		<!--JCaptcha验证码服务 -->
+	<bean id="captchaService" class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService">
+		<property name="captchaEngine">
+			<bean class="org.springside.modules.security.jcaptcha.GMailEngine" />
+		</property>
+		<!-- 
+		默认生成的图片180秒过期 , 可另行设置
+		<property name="minGuarantedStorageDelayInSeconds" value="180" />
+		-->
+	</bean>
+</beans>
