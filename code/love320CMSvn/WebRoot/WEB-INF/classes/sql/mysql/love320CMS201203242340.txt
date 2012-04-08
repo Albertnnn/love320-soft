@@ -1,6 +1,15 @@
-ÎÄ¼þ: F:\Love320cms\love320CMS\love320CMS-v2.6.1-201203242340\love320CMS201203242340.zip
-´óÐ¡: 45720059 ×Ö½Ú
-ÐÞ¸ÄÊ±¼ä: 2012Äê3ÔÂ24ÈÕ, 23:40:58
+/**
+ * Copyright (c) 2010-2011 love320.com
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * 
+ * Founder admin@love320.com
+ * 
+ * http://www.love320.com
+ */
+ï¿½Ä¼ï¿½: F:\Love320cms\love320CMS\love320CMS-v2.6.1-201203242340\love320CMS201203242340.zip
+ï¿½ï¿½Ð¡: 45720059 ï¿½Ö½ï¿½
+ï¿½Þ¸ï¿½Ê±ï¿½ï¿½: 2012ï¿½ï¿½3ï¿½ï¿½24ï¿½ï¿½, 23:40:58
 MD5: E3381C6A0188F4497EE0431EA58F52E4
 SHA1: 3A8494ABA46344DFE584DF7884622F29E4E1ABD8
 CRC32: 46AAF4CF
