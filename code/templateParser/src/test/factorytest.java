@@ -9,9 +9,9 @@ package test;
 
 import java.io.File;
 
-import com.templateparser.factory.AppFactory;
-import com.templateparser.factory.Factory;
-import com.templateparser.factory.impl.FactoryImpl;
+import com.love320.templateparser.factory.AppFactory;
+import com.love320.templateparser.factory.Factory;
+import com.love320.templateparser.factory.impl.FactoryImpl;
 
 import junit.framework.TestCase;
 
