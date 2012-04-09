@@ -38,6 +38,7 @@ public class factorytest extends TestCase {
 		a.getC().print();
 		a.getAcsdkfei().privasdf();
 		a.getIntk();
+		a.getB().get();
 				
 	}
 	
