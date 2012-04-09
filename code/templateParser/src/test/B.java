@@ -10,6 +10,8 @@ package test;
 public class B {
 	
 	private C c;
+	
+	private Dself dself  = new Dself();
 
 	public C getC() {
 		System.out.println("getC");
@@ -24,6 +26,15 @@ public class B {
 	public void print(){
 		System.out.println("goB");
 	}
+	
+	public void get(){
+		dself.get();
+		
+		Dself skdf = new Dself();
+		
+		System.out.println(skdf);
+	}
+	
 	
 	
 }
