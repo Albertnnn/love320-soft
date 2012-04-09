@@ -9,14 +9,14 @@ package test;
 
 import java.io.File;
 
+import junit.framework.TestCase;
+
 import com.love320.templateparser.factory.AppFactory;
 import com.love320.templateparser.factory.Factory;
-import com.love320.templateparser.factory.impl.FactoryImpl;
-
-import junit.framework.TestCase;
 
 public class factorytest extends TestCase {
 	public void testsysprintln(){
+		System.out.println("go");
 		Thread.currentThread().getContextClassLoader().getResource("");
 		System.out.println(factorytest.class.getClassLoader().getResource(""));
 		System.out.println(ClassLoader.getSystemResource(""));
