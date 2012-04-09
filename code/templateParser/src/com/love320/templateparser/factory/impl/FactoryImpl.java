@@ -5,7 +5,7 @@
  * 
  * Founder admin@love320.com
  */
-package com.templateparser.factory.impl;
+package com.love320.templateparser.factory.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -13,8 +13,8 @@ import java.util.List;
 import org.dom4j.Element;
 import org.dom4j.Node;
 
-import com.templateparser.cache.Cache;
-import com.templateparser.factory.Factory;
+import com.love320.templateparser.cache.Cache;
+import com.love320.templateparser.factory.Factory;
 
 /*
  * 工厂

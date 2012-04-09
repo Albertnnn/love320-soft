@@ -5,12 +5,12 @@
  * 
  * Founder admin@love320.com
  */
-package com.templateparser.cache.impl;
+package com.love320.templateparser.cache.impl;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.templateparser.cache.Cache;
+import com.love320.templateparser.cache.Cache;
 
 public class SysCache implements Cache {
 	

@@ -5,7 +5,7 @@
  * 
  * Founder admin@love320.com
  */
-package com.templateparser.factory.impl;
+package com.love320.templateparser.factory.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,7 +19,7 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.templateparser.factory.Factory;
+import com.love320.templateparser.factory.Factory;
 
 /*
  * 工厂

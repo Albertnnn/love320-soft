@@ -5,16 +5,16 @@
  * 
  * Founder admin@love320.com
  */
-package com.templateparser.factory;
+package com.love320.templateparser.factory;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.templateparser.cache.Cache;
-import com.templateparser.cache.impl.SysCache;
-import com.templateparser.factory.impl.FactoryImpl;
+import com.love320.templateparser.cache.Cache;
+import com.love320.templateparser.cache.impl.SysCache;
+import com.love320.templateparser.factory.impl.FactoryImpl;
 
 public class AppFactory {
 	

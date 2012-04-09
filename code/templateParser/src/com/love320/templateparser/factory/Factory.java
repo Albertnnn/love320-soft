@@ -5,7 +5,7 @@
  * 
  * Founder admin@love320.com
  */
-package com.templateparser.factory;
+package com.love320.templateparser.factory;
 
 public interface Factory {
 	
