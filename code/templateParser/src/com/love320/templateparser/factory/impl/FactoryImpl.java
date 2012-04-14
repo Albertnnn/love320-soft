@@ -66,10 +66,17 @@ public class FactoryImpl implements Factory {
 				Node propertyBeanNode = docroot.selectSingleNode("/beans/bean[@id='"+beanName+"']/property[@name='"+propertyName+"']/ref/@bean");
 		
 				if(propertyBeanNode != null){
-				Object refObject = procreationXML(propertyBeanNode.getText());
-				//反射注入
-				Method method = object.getClass().getMethod("set"+propertyName.substring(0, 1).toUpperCase() + propertyName.substring(1),refObject.getClass());
-				method.invoke(object, refObject);
+					Object refObject = null;
+					
+					if(cache != null){
+						refObject = getbean(propertyBeanNode.getText());//有缓存
+					}else{
+						refObject = procreationXML(propertyBeanNode.getText());//无缓存
+					}
+					
+					//反射注入
+					Method method = object.getClass().getMethod("set"+propertyName.substring(0, 1).toUpperCase() + propertyName.substring(1),refObject.getClass());
+					method.invoke(object, refObject);
 				}else{
 					Node valueNode = docroot.selectSingleNode("/beans/bean[@id='"+beanName+"']/property[@name='"+propertyName+"']/value");
 					if(valueNode != null){
