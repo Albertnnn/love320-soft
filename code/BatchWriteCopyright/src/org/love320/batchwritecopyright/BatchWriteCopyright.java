@@ -43,7 +43,7 @@ public class BatchWriteCopyright {
 	public static void main(String[] args) {
 		BatchWriteCopyright bwc = new BatchWriteCopyright();
 		//System.out.println("开始");
-		bwc.scanDirFile("D:\\Workspaces\\svn\\code\\love320CMSvn\\src");//批量修改的目录
+		bwc.scanDirFile("D:\\Workspaces\\svn\\code\\love320CMS\\src");//批量修改的目录
 		//System.out.println("结束");
 		List fpl = bwc.getFilePathList();
 		List fplnew = new List();
