@@ -46,24 +46,30 @@ public class BatchWriteCopyright {
 		bwc.scanDirFile("D:\\Workspaces\\svn\\code\\love320CMSvn\\src");//批量修改的目录
 		//System.out.println("结束");
 		List fpl = bwc.getFilePathList();
+		List fplnew = new List();
+		//System.out.println("开始数 ："+ fpl.getItemCount());
 		for(int i = 0 ;i < fpl.getItemCount() ;i++){  //获取指定文件类型列表
-			File fileType = new File(fpl.getItem(i).toString());
-			if(fileType.getName().endsWith(".java")){ //指定文件后缀名
-				//System.out.println(fileType.getPath());
+			String pathstrtmp =  fpl.getItem(i);
+			File fileType = new File(pathstrtmp);
+			if(fileType.getName().endsWith("java")){ //指定文件后缀名
+				System.out.println(fileType.getPath());
+				fplnew.add(pathstrtmp);
 			}else{
-				fpl.remove(i);
+				//fpl.remove(fpl.getItem(i));
 			}
+			//System.out.println(fileType.getPath());
 		}
+		
+		fpl = null;//释放对象
+		//System.out.println("结束数 ："+ fpl.getItemCount());
 		
 		String addStrPath = "D:\\Workspaces\\svn\\code\\BatchWriteCopyright\\src\\org\\love320\\batchwritecopyright\\addStr.txt";//添加到被修改的文件-文件中要写添加的内容
 		
-		for(int i = 0 ;i < fpl.getItemCount() ;i++){
-			System.out.println("action:"+fpl.getItem(i).toString());
-			bwc.editFile(fpl.getItem(i).toString(),addStrPath);
+		for(int i = 0 ;i < fplnew.getItemCount() ;i++){
+			System.out.println(i + " - action:"+fplnew.getItem(i).toString());
+			bwc.editFile(fplnew.getItem(i).toString(),addStrPath);
 		}
-		
-		System.out.println("处理文件数:"+fpl.getItemCount());
-		
+		System.out.println("处理数 ："+ fplnew.getItemCount());
 	}
 	
 	private void scanDirFile(String fileDirPath){
