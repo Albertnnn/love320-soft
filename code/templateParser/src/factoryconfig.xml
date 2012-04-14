@@ -2,6 +2,14 @@
 
 <beans>
     <description>factory</description>
+    
+    <bean id="factory" >
+    	<property name="cache">
+			<ref bean="cache" />
+		</property>
+    </bean>
+    
+    <bean id="cache" class="com.love320.templateparser.cache.impl.SysCache"></bean>
 
 	<bean id="test2" class="test.test2"></bean>
 	

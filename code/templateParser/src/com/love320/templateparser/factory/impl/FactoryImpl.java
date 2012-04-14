@@ -22,21 +22,31 @@ import com.love320.templateparser.factory.Factory;
 
 public class FactoryImpl implements Factory {
 
-	private Cache cache;
+	private Cache cache;//缓存
+	private String cacheKey = "love320Zksdfjkghksfjdlkjweofjksdfjdkghkjfskfsj";//缓存建值(头)
 	private Element docroot ;
 	
-	public FactoryImpl(Element docroot,Cache cache) {
+	public FactoryImpl(Element docroot) {
 		this.docroot = docroot;
-		this.cache = cache;
+	}
+	
+	//工厂初始化
+	public FactoryImpl factoryInit(){
+		
+		//设置缓存
+		cache = (Cache)procreationXML("cache");
+		System.out.println();
+		return this;
 	}
 
 	@Override
 	public Object getbean(String beanName) {
-		Object object = cache.getObject(beanName);//从缓存只取对象
+		Object object = cache.getObject(cacheKey+beanName);//从缓存只取对象
 		if(object != null){
 			return object ;
 		}else{
 			object = procreationXML(beanName);//以ID名实例对象
+			cache.putObject(cacheKey+beanName, object);//放缓存中
 			return object;
 		}
 		
@@ -48,7 +58,6 @@ public class FactoryImpl implements Factory {
 		Object object = null;
 		try {
 			object = Class.forName(node.getText()).newInstance();//实例化当前类
-			cache.putObject(beanName, object);
 			
 			List ls = docroot.selectNodes("/beans/bean[@id='"+beanName+"']/property");//获取当前实例依赖类
 			for(int i = 0 ; i < ls.size();i++){

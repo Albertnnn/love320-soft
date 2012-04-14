@@ -52,8 +52,7 @@ public class AppFactory {
 
 	public Factory getFactory() {
 		if(factory == null){
-			Cache cache = new SysCache();
-			factory = new FactoryImpl(DOCROOT,cache);
+			factory = new FactoryImpl(DOCROOT).factoryInit();
 		}
 		return factory;
 	}
