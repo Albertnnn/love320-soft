@@ -42,6 +42,17 @@ public class factorytest extends TestCase {
 				
 	}
 	
+	public void testobect2(){
+		AppFactory appfactory = AppFactory.getAppFactory();
+		appfactory.setConPath("bin/factoryconfig.xml");
+		
+		Factory factory = appfactory.getFactory();
+		factory.getbean("cc");
+		factory.getbean("b");
+		factory.getbean("test2");
+				
+	}
+	
 	public void testsing(){
 		
 		AppFactory appfactory = AppFactory.getAppFactory();

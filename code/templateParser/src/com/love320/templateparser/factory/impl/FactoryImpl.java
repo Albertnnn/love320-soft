@@ -23,7 +23,7 @@ import com.love320.templateparser.factory.Factory;
 public class FactoryImpl implements Factory {
 
 	private Cache cache;//缓存
-	private String cacheKey = "love320Zksdfjkghksfjdlkjweofjksdfjdkghkjfskfsj";//缓存建值(头)
+	private String cacheKey = "WWW.LOVE320.COMKeyksdjfksdjglksjdfkdhsgksdjfkljsdlkfjsdlkfj>";//缓存建值(头)
 	private Element docroot ;
 	
 	public FactoryImpl(Element docroot) {
@@ -35,7 +35,7 @@ public class FactoryImpl implements Factory {
 		
 		//设置缓存
 		cache = (Cache)procreationXML("cache");
-		System.out.println();
+
 		return this;
 	}
 

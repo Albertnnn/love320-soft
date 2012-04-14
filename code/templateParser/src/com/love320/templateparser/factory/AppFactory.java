@@ -52,7 +52,7 @@ public class AppFactory {
 
 	public Factory getFactory() {
 		if(factory == null){
-			factory = new FactoryImpl(DOCROOT).factoryInit();
+			factory = new FactoryImpl(DOCROOT).factoryInit();//实例化工厂类并初始化
 		}
 		return factory;
 	}

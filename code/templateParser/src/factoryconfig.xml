@@ -9,6 +9,7 @@
 		</property>
     </bean>
     
+    <!-- 工厂缓存 -->
     <bean id="cache" class="com.love320.templateparser.cache.impl.SysCache"></bean>
 
 	<bean id="test2" class="test.test2"></bean>
