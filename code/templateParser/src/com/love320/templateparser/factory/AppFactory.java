@@ -52,7 +52,10 @@ public class AppFactory {
 
 	public Factory getFactory() {
 		if(factory == null){
+			//工厂一
 			//factory = new FactoryImpl(DOCROOT).factoryInit();//实例化工厂类并初始化
+			
+			//工厂二
 			BeanString bs = new BeanString();
 			bs.setName("beanfactory");
 			bs.setClassName("com.love320.templateparser.factory.bean.impl.BeanFactoryImpl");
