@@ -7,8 +7,10 @@
  */
 package test;
 
-public class test2 {
+import junit.framework.TestCase;
+
+public class test2  extends TestCase{
 	public void teset2(){
-		System.out.println(">>>>>>>ok");
+		AgoB agob = new AgoB();
 	}
 }

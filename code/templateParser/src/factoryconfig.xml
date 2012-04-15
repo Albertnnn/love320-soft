@@ -41,6 +41,6 @@
 		</property>
 	</bean>
 	
-	<bean id="cc" class="test.C" />
+	<bean id="cc" class="test.C"  scope="singleton" /> <!-- prototype -->
    
 </beans>

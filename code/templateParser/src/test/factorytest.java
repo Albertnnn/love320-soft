@@ -39,7 +39,8 @@ public class factorytest extends TestCase {
 		a.getAcsdkfei().privasdf();
 		a.getIntk();
 		a.getB().get();
-				
+		System.out.println(">>>>>获取对象");
+		System.out.println(">>>>> end");
 	}
 	
 	public void testobect2(){
@@ -68,5 +69,12 @@ public class factorytest extends TestCase {
 		System.out.println(factory2);
 		
 		
+	}
+	
+	public void testBean(){
+		AppFactory appfactory = AppFactory.getAppFactory();
+		appfactory.setConPath("bin/factoryconfig.xml");
+		appfactory.getFactory();
+
 	}
 }
