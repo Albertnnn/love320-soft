@@ -27,7 +27,7 @@ public class BeanFactoryCacheImpl implements BeanFactory {
 
 	private Element docroot ;
 	private Cache cache;
-	private String cacheKey = "WWW.LOVE320.COMKeyksdjfksdjglksjdfkdhsgksdjfkljsdlkfjsdlkfjb>bean";// 缓存建值(头)
+	private String cacheKey = "WWW.LOVE320.COMKeyksdjfksdjglksjdfkdhsgksdjfkljsdlkfj<bean>:";// 缓存建值(头)
 	
 	@Override
 	public BeanString getBeanString(String name) {

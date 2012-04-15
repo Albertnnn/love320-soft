@@ -23,7 +23,7 @@ import com.love320.templateparser.factory.bean.BeanString;
 public class FactoryBeanImpl implements Factory {
 
 	private Cache cache;// 缓存
-	private String cacheKey = "WWW.LOVE320.COMKeyksdjfksdjglksjdfkdhsgksdjfkljsdlkfjsdlkfj>";// 缓存建值(头)
+	private String cacheKey = "WWW.LOVE320.COMKeyksdjfksdjglksjdfkdhsgksdjfkljsdlkfj<FactoryBean>:";// 缓存建值(头)
 	private BeanFactory beanFactory;//生产beanString 对象工厂
 
 	// 工厂初始化
@@ -72,14 +72,11 @@ public class FactoryBeanImpl implements Factory {
 	@Override
 	public Object getbean(String beanName) {
 		Object object = cache.getObject(cacheKey + beanName);// 从缓存只取对象
-		if (object != null) {
-			return object;
-		} else {
+		if (object == null) {
 			object = procreationBean(beanFactory.getBeanString(beanName));// 以ID名实例对象
-			cache.putObject(cacheKey + beanName, object);// 放缓存中
-			return object;
+			cache.putObject(cacheKey + beanName, object);// 放入缓存中
 		}
-
+		return object;
 	}
 
 	// 递归生成对象
