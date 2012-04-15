@@ -73,8 +73,14 @@ public class FactoryBeanImpl implements Factory {
 	public Object getbean(String beanName) {
 		Object object = cache.getObject(cacheKey + beanName);// 从缓存只取对象
 		if (object == null) {
-			object = procreationBean(beanFactory.getBeanString(beanName));// 以ID名实例对象
-			cache.putObject(cacheKey + beanName, object);// 放入缓存中
+			BeanString beanString = beanFactory.getBeanString(beanName);//获取bean信息对象
+			object = procreationBean(beanString);// 以ID名实例对象
+			if((beanString != null)&&(beanString.getScope() != null)&&(beanString.getScope().equals("prototype"))){
+				
+			}else{
+				cache.putObject(cacheKey + beanName, object);// 放入缓存中
+			}
+			
 		}
 		return object;
 	}

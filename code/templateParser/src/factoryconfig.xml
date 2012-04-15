@@ -51,5 +51,7 @@
 	</bean>
 	
 	<bean id="cc" class="test.C"  scope="singleton" /> <!-- prototype -->
+	
+	<bean id="csdsc" class="test.C"  scope="prototype" /> <!-- prototype -->
    
 </beans>
