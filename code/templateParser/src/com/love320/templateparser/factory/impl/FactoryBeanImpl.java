@@ -90,30 +90,32 @@ public class FactoryBeanImpl implements Factory {
 			
 			object = c.newInstance();// 实例化当前类
 
-			List<String[]> refList = beanString.getRefList();
+			List<String[]> refList = beanString.getRefList();//获取注入信息列表
 			for (int i = 0; i < refList.size(); i++) {
-				Object refObject = null;
-				String[] refStrs = refList.get(i);
+				Object refObject = null;//声明空对象
+				String[] refStrs = refList.get(i);//获取注入方法名，带注入的beanid
 				if(cache != null){
 					refObject = getbean(refStrs[1]);// 有缓存
 				}else{
 					refObject = procreationBean(beanFactory.getBeanString(refStrs[1]));// 无缓存
 				}
 				
-				Class<?> refClass = null;
-				Class<?> inter[]= null;//声明一个对象数组
+				Class<?> refClass = null;//声明接口类型
+				Class<?> inter[]= null;//声明对象数组
 				inter = refObject.getClass().getInterfaces();
 				for(int ii=0;ii<inter.length;ii++){
-					  refClass = Class.forName(inter[ii].getName());
+					  refClass = Class.forName(inter[ii].getName());//声明一个类型
 					}
 				Method method = null;
 				if(inter.length>0){
+					//接口注入
 					 method = object.getClass().getMethod("set"+ refStrs[0].substring(0,1).toUpperCase() +  refStrs[0].substring(1),refClass);
 				}else{
+					//对象注入
 					method = object.getClass().getMethod("set"+ refStrs[0].substring(0,1).toUpperCase() +  refStrs[0].substring(1),refObject.getClass());
 				}
 				// 反射注入
-					 method.invoke(object, refObject);
+				 method.invoke(object, refObject);
 			}
 
 			List<String[]> valueList = beanString.getValueList();
