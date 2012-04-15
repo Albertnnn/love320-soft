@@ -11,6 +11,15 @@
     
     <!-- 工厂缓存 -->
     <bean id="cache" class="com.love320.templateparser.cache.impl.SysCache"></bean>
+    
+    <bean id="EhcacheFactory" class="com.love320.templateparser.cache.impl.EhcacheFactory"></bean>
+    
+    <!-- bean工厂 -->
+    <bean id="beanfactory" class="com.love320.templateparser.factory.bean.impl.BeanFactoryCacheImpl">
+    	<property name="cache">
+    		<ref bean="cache" />
+    	</property>
+    </bean>
 
 	<bean id="test2" class="test.test2"></bean>
 	

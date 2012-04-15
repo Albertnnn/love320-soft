@@ -10,13 +10,8 @@ package com.love320.templateparser.factory.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
-import java.util.Map;
-
 import org.dom4j.Element;
-import org.dom4j.Node;
-
 import com.love320.templateparser.cache.Cache;
-import com.love320.templateparser.cache.impl.SysCache;
 import com.love320.templateparser.factory.BeanFactory;
 import com.love320.templateparser.factory.Factory;
 import com.love320.templateparser.factory.bean.BeanString;
@@ -33,17 +28,24 @@ public class FactoryBeanImpl implements Factory {
 
 	// 工厂初始化
 	public FactoryBeanImpl factoryInit(BeanString beanString,Element docroot) {
+		
+		//工厂类默认初始化
 		//生产bean工厂
 		beanFactory = (BeanFactory)procreationBean(beanString);
 		BeanFactoryInit(docroot);
 
 		// 设置缓存
 		cache = (Cache) procreationBean(beanFactory.getBeanString("cache"));
-
+		//工厂类默认初始化 end
+		
+		//从配置文件中初始化工厂
+		beanFactory = (BeanFactory)procreationBean(beanFactory.getBeanString("beanfactory"));
+		BeanFactoryInit(docroot);
+		
 		return this;
 	}
 	
-	// 反射注入
+	// 反射注入配置文件给beanfactory工厂
 	private boolean BeanFactoryInit(Element docroot){
 		 try {
 				Method method = beanFactory.getClass().getMethod("setDocroot",Element.class);
@@ -84,16 +86,33 @@ public class FactoryBeanImpl implements Factory {
 	private Object procreationBean(BeanString beanString) {
 		Object object = null;
 		try {
-			object = Class.forName(beanString.getClassName()).newInstance();// 实例化当前类
+			Class<?> c = Class.forName(beanString.getClassName());
+			
+			object = c.newInstance();// 实例化当前类
 
 			List<String[]> refList = beanString.getRefList();
 			for (int i = 0; i < refList.size(); i++) {
 				Object refObject = null;
 				String[] refStrs = refList.get(i);
+				if(cache != null){
 					refObject = getbean(refStrs[1]);// 有缓存
-	
-					// 反射注入
-					 Method method = object.getClass().getMethod("set"+ refStrs[0].substring(0,1).toUpperCase() +  refStrs[0].substring(1),refObject.getClass());
+				}else{
+					refObject = procreationBean(beanFactory.getBeanString(refStrs[1]));// 无缓存
+				}
+				
+				Class<?> refClass = null;
+				Class<?> inter[]= null;//声明一个对象数组
+				inter = refObject.getClass().getInterfaces();
+				for(int ii=0;ii<inter.length;ii++){
+					  refClass = Class.forName(inter[ii].getName());
+					}
+				Method method = null;
+				if(inter.length>0){
+					 method = object.getClass().getMethod("set"+ refStrs[0].substring(0,1).toUpperCase() +  refStrs[0].substring(1),refClass);
+				}else{
+					method = object.getClass().getMethod("set"+ refStrs[0].substring(0,1).toUpperCase() +  refStrs[0].substring(1),refObject.getClass());
+				}
+				// 反射注入
 					 method.invoke(object, refObject);
 			}
 
