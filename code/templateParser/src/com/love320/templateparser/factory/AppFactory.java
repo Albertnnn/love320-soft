@@ -50,7 +50,7 @@ public class AppFactory {
 		}
 	}
 
-	public Factory getFactory() {
+	public  synchronized Factory getFactory() {
 		if(factory == null){
 			//工厂一
 			//factory = new FactoryImpl(DOCROOT).factoryInit();//实例化工厂类并初始化
