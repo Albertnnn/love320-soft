@@ -36,7 +36,7 @@ public class FactoryBeanImpl implements Factory {
 
 		// 设置缓存
 		cache = (Cache) procreationBean(beanFactory.getBeanString("cache"));
-		//工厂类默认初始化 end
+		//工厂类默认初始化结束  end
 		
 		//从配置文件中初始化工厂
 		beanFactory = (BeanFactory)procreationBean(beanFactory.getBeanString("beanfactory"));
