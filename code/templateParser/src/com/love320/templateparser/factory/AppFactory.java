@@ -55,7 +55,7 @@ public class AppFactory {
 			//factory = new FactoryImpl(DOCROOT).factoryInit();//实例化工厂类并初始化
 			BeanString bs = new BeanString();
 			bs.setName("beanfactory");
-			bs.setClassName("com.love320.templateparser.factory.bean.BeanFactoryImpl");
+			bs.setClassName("com.love320.templateparser.factory.bean.impl.BeanFactoryImpl");
 			factory = new FactoryBeanImpl().factoryInit(bs,DOCROOT);//实例化工厂类并初始化
 		}
 		return factory;
