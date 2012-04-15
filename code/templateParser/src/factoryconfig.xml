@@ -44,7 +44,7 @@
 	
 	<bean id="acateols" class="test.Acateols"></bean>
 	
-	<bean id="b" class="test.B">
+	<bean id="b" class="test.B"  scope="prototype">
 		<property name="c">
 			<ref bean="cc" />
 		</property>
