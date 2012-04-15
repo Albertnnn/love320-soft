@@ -74,7 +74,19 @@ public class factorytest extends TestCase {
 	public void testBean(){
 		AppFactory appfactory = AppFactory.getAppFactory();
 		appfactory.setConPath("bin/factoryconfig.xml");
-		appfactory.getFactory();
-
+		Factory factory = appfactory.getFactory();
+		System.out.println(factory.getbean("cache"));
+		System.out.println(factory.getbean("csdsc"));
+		System.out.println(factory.getbean("csdsc"));
+		System.out.println(factory.getbean("csdsc"));
+		System.out.println(factory.getbean("csdsc"));
+		System.out.println(factory.getbean("csdsc"));
+		System.out.println(factory.getbean("cache"));
+		System.out.println(factory.getbean("cache"));
+		System.out.println(factory.getbean("cache"));
+		System.out.println(factory.getbean("cc"));
+		System.out.println(factory.getbean("cc"));
+		System.out.println(factory.getbean("cc"));
+		
 	}
 }
