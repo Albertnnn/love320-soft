@@ -72,15 +72,18 @@ public class FactoryBeanImpl implements Factory {
 	@Override
 	public Object getbean(String beanName) {
 		Object object = cache.getObject(cacheKey + beanName);// 从缓存只取对象
-		synchronized(this){
 			if (object == null) {
-				BeanString beanString = beanFactory.getBeanString(beanName);//获取bean信息对象
-				object = procreationBean(beanString);// 以beanString信息对象生产实例对象
-				if((beanString != null)&&(beanString.getScope() != null)&&(beanString.getScope().equals("prototype"))){
-					//多实例化对象，不加入缓存
-				}else{
-					cache.putObject(cacheKey + beanName, object);// 放入缓存中
-				}
+				synchronized(this){
+					object = cache.getObject(cacheKey + beanName);
+					if(object == null){
+						BeanString beanString = beanFactory.getBeanString(beanName);//获取bean信息对象
+						object = procreationBean(beanString);// 以beanString信息对象生产实例对象
+						if((beanString != null)&&(beanString.getScope() != null)&&(beanString.getScope().equals("prototype"))){
+							//多实例化对象，不加入缓存
+						}else{
+							cache.putObject(cacheKey + beanName, object);// 放入缓存中
+						}
+					}
 			}
 		}
 		return object;

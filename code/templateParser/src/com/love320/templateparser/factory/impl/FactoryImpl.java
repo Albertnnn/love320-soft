@@ -124,6 +124,7 @@ public class FactoryImpl implements Factory {
 	}
 
 	public void setCache(Cache cache) {
+		
 		this.cache = cache;
 	}
 	
