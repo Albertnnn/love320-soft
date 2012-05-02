@@ -13,6 +13,7 @@ import junit.framework.TestCase;
 
 import com.love320.templateparser.factory.AppFactory;
 import com.love320.templateparser.factory.Factory;
+import com.love320.templateparser.templateprocess.TemplateProcess;
 
 public class factorytest extends TestCase {
 	public void testsysprintln(){
@@ -87,6 +88,15 @@ public class factorytest extends TestCase {
 		System.out.println(factory.getbean("cc"));
 		System.out.println(factory.getbean("cc"));
 		System.out.println(factory.getbean("cc"));
+		
+	}
+	
+	public void testBeanTemplate(){
+		AppFactory appfactory = AppFactory.getAppFactory();
+		appfactory.setConPath("bin/factoryconfig.xml");
+		Factory factory = appfactory.getFactory();
+		TemplateProcess templateProcess = (TemplateProcess)factory.getbean("templateProcess");
+		System.out.println(templateProcess.get("bin/factoryconfig.xml"));
 		
 	}
 }
