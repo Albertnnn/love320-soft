@@ -20,6 +20,21 @@
     		<ref bean="cache" />
     	</property>
     </bean>
+    
+    <!-- 模板解析 -->
+	<bean id="templateProcess" class="com.love320.templateparser.templateprocess.impl.TemplateProcessImpl">
+		<property name="fileToString">
+			<ref bean="fileToString" />
+		</property>
+		<property name="templateDir">
+			<value></value>
+		</property>
+	</bean>
+	
+	<bean id="fileToString" class="com.love320.templateparser.io.impl.FileToStringImpl" />
+    <!-- 模板解析 end -->
+    
+    <!-- 以下为测试用 -->
 
 	<bean id="test2" class="test.test2"></bean>
 	
@@ -53,5 +68,7 @@
 	<bean id="cc" class="test.C"  scope="singleton" /> <!-- prototype -->
 	
 	<bean id="csdsc" class="test.C"  scope="prototype" /> <!-- prototype -->
+   
+   <!-- 以下为测试用 end -->
    
 </beans>
