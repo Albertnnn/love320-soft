@@ -26,12 +26,23 @@
 		<property name="fileToString">
 			<ref bean="fileToString" />
 		</property>
+		<property name="separation">
+			<ref bean="separation" />
+		</property>
 		<property name="templateDir">
 			<value></value>
 		</property>
 	</bean>
 	
 	<bean id="fileToString" class="com.love320.templateparser.io.impl.FileToStringImpl" />
+	<bean id="separation" class="com.love320.templateparser.templateprocess.impl.SeparationImpl" >
+		<property name="tagNamehead">
+			<value>love320_</value>
+		</property>
+		<property name="tagNamefoot">
+			<value>/</value>
+		</property>
+	</bean>
     <!-- 模板解析 end -->
     
     <!-- 以下为测试用 -->
