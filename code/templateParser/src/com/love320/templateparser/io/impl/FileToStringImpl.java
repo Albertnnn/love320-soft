@@ -28,7 +28,7 @@ public class FileToStringImpl implements FileToString {
         // 开始读取
         String lineTXT = null;
         while ((lineTXT = bufferedReader.readLine()) != null) {
-                fileContent += lineTXT+"\n";//加入换行符
+                fileContent += lineTXT+"\r\n";//加入换行符
         }
         
         // 关闭文件流
