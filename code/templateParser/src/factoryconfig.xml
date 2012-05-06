@@ -29,6 +29,9 @@
 		<property name="separation">
 			<ref bean="separation" />
 		</property>
+		<property name="xmlToLabel">
+			<ref bean="xmlToLabel" />
+		</property>
 		<property name="templateDir">
 			<value></value>
 		</property>
@@ -43,6 +46,7 @@
 			<value>/</value>
 		</property>
 	</bean>
+	<bean id="xmlToLabel" class="com.love320.templateparser.label.impl.XMLToLabelImpl" />
     <!-- 模板解析 end -->
     
     <!-- 以下为测试用 -->
