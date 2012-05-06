@@ -38,6 +38,8 @@ public class LabelProcessImpl implements LabelProcess {
 	@Override
 	public String get(String labelName) {
 		LabelBean labelBean = labelBeanFactory.get(labelName);//以标签名获取标签信息对象装载体
+		System.out.println("labelName:"+labelName);
+		System.out.println("bean:"+labelBean.getBean());
 		System.out.println(factoryService.getbean(labelBean.getBean()));
 		System.out.println(labelBean.getTemplate());
 		return labelBean.getTemplate();

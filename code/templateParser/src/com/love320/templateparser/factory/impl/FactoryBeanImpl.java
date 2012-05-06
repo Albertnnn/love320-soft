@@ -71,6 +71,8 @@ public class FactoryBeanImpl implements Factory {
 
 	@Override
 	public Object getbean(String beanName) {
+		if(beanName == null) return null;//beanName 失效
+		
 		Object object = cache.getObject(cacheKey + beanName);// 从缓存只取对象
 			if (object == null) {
 				synchronized(this){
