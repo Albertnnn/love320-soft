@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<labels>
+    <description>factory</description>
+    
+    <label name="网站名称 ">
+    	<parameters><![CDATA[{"name":"zhangdi","age":19}]]></parameters>
+    	<template><![CDATA[zswsdhtgf一吵嘴是中]]></template>
+    	<classpath>com.love320.template.lsdkjf.sdlk</classpath>
+    	<note>说明书</note>
+    </label>
+    
+    <label name="网站关键字 ">
+    	<parameters><![CDATA[{"name":"zhangdi","age":19}]]></parameters>
+    	<template><![CDATA[zswsdhtgf一吵嘴是中]]></template>
+    	<classpath>com.love320.template.lsdkjf.sdlk</classpath>
+    	<note>说明书</note>
+    </label>
+</labels>

@@ -55,7 +55,17 @@
 			<ref bean="labelProcess" />
 		</property>
 	</bean>
-	<bean id="labelProcess" class="com.love320.templateparser.label.impl.LabelProcessImpl" />
+	<bean id="labelProcess" class="com.love320.templateparser.label.impl.LabelProcessImpl" >
+		<property name="labelBeanFactory">
+			<ref bean="labelBeanFactory" />
+		</property>
+	</bean>
+	<bean id="labelBeanFactory" class="com.love320.templateparser.factory.impl.LabelBeanFactoryImpl" >
+		<property name="configPath">
+			<value>bin/labelbeanconfig.xml</value>
+		</property>
+	</bean>
+	
 	
     <!-- 模板解析 end -->
     
