@@ -7,7 +7,7 @@
  */
 package com.love320.templateparser.factory;
 
-import com.love320.templateparser.factory.bean.BeanString;
+import com.love320.templateparser.factory.entity.BeanString;
 
 /** 
  * @ClassName: BeanFactory 

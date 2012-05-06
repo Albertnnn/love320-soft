@@ -12,7 +12,7 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.love320.templateparser.factory.bean.BeanString;
+import com.love320.templateparser.factory.entity.BeanString;
 import com.love320.templateparser.factory.impl.FactoryBeanImpl;
 import com.love320.templateparser.factory.impl.FactoryImpl;
 
@@ -58,7 +58,7 @@ public class AppFactory {
 			//工厂二
 			BeanString bs = new BeanString();
 			bs.setName("beanfactory");
-			bs.setClassName("com.love320.templateparser.factory.bean.impl.BeanFactoryImpl");
+			bs.setClassName("com.love320.templateparser.factory.impl.BeanFactoryImpl");
 			factory = new FactoryBeanImpl().factoryInit(bs,DOCROOT);//实例化工厂类并初始化
 		}
 		return factory;

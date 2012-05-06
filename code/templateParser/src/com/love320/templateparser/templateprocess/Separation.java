@@ -7,8 +7,6 @@
  */
 package com.love320.templateparser.templateprocess;
 
-import org.w3c.dom.Document;
-
 /** 
  * @ClassName: Separation 
  * @Description: TODO
@@ -17,5 +15,5 @@ import org.w3c.dom.Document;
  *  
  */
 public interface Separation {
-	public Document getXML(String str);//分离内容与标签
+	public String getXML(String str);//分离内容与标签
 }

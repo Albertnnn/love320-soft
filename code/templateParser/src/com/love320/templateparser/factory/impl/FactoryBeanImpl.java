@@ -14,7 +14,7 @@ import org.dom4j.Element;
 import com.love320.templateparser.cache.Cache;
 import com.love320.templateparser.factory.BeanFactory;
 import com.love320.templateparser.factory.Factory;
-import com.love320.templateparser.factory.bean.BeanString;
+import com.love320.templateparser.factory.entity.BeanString;
 
 /*
  * 工厂
