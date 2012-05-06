@@ -32,6 +32,9 @@
 		<property name="xmlToLabel">
 			<ref bean="xmlToLabel" />
 		</property>
+		<property name="labelParser">
+			<ref bean="labelParser" />
+		</property>
 		<property name="templateDir">
 			<value></value>
 		</property>
@@ -47,6 +50,7 @@
 		</property>
 	</bean>
 	<bean id="xmlToLabel" class="com.love320.templateparser.label.impl.XMLToLabelImpl" />
+	<bean id="labelParser" class="com.love320.templateparser.label.impl.LabelParserImpl" />
     <!-- 模板解析 end -->
     
     <!-- 以下为测试用 -->

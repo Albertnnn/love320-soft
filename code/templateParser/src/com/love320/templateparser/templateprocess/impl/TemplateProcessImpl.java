@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.love320.templateparser.factory.entity.Label;
 import com.love320.templateparser.io.FileToString;
+import com.love320.templateparser.label.LabelParser;
 import com.love320.templateparser.label.XMLToLabel;
 import com.love320.templateparser.templateprocess.Separation;
 import com.love320.templateparser.templateprocess.TemplateProcess;
@@ -18,6 +19,7 @@ public class TemplateProcessImpl implements TemplateProcess {
 	private String templateDir = ""; //模板目录
 	private Separation separation;//分离器(内容与标签分离)
 	private XMLToLabel xmlToLabel;//转换器，从xml数据格式转换为label对象
+	private LabelParser labelParser;//标签分析器
 
 	public void setTemplateDir(String templateDir) {
 		this.templateDir = templateDir;
@@ -35,6 +37,10 @@ public class TemplateProcessImpl implements TemplateProcess {
 		this.xmlToLabel = xmlToLabel;
 	}
 
+	public void setLabelParser(LabelParser labelParser) {
+		this.labelParser = labelParser;
+	}
+
 	@Override
 	public String get(String path) {
 		return get(new File(path));
@@ -45,7 +51,7 @@ public class TemplateProcessImpl implements TemplateProcess {
 		String templateFileStr = fileToString.get(file);//从文件中读取内容到字符串中
 		String tempXML = separation.getXML(templateFileStr);//分离内容与标签并以xml管理，返回xml字符串
 		List<Label> labelList = xmlToLabel.get(tempXML);//从xml数据格式转换为label对象
-		
+		labelList = labelParser.get(labelList);
 		System.out.println(labelList.size());
 		
 		return null;
