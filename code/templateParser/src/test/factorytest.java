@@ -93,10 +93,9 @@ public class factorytest extends TestCase {
 	
 	public void testBeanTemplate(){
 		AppFactory appfactory = AppFactory.getAppFactory();
-		//appfactory.setConPath("bin/factoryconfig.xml");
+		appfactory.setConPath("bin/com/love320/templateparser/factory/factoryconfig.xml");//指定配置文件
 		Factory factory = appfactory.getFactory();
 		TemplateProcess templateProcess = (TemplateProcess)factory.getbean("templateProcess");
 		System.out.println(templateProcess.get("bin/homepage.htm"));
-		
 	}
 }
