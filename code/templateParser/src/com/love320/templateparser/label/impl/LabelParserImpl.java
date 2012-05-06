@@ -12,6 +12,7 @@ import java.util.List;
 
 import com.love320.templateparser.factory.entity.Label;
 import com.love320.templateparser.label.LabelParser;
+import com.love320.templateparser.label.LabelProcess;
 
 /** 
  * @ClassName: LabelParserImpl 
@@ -21,13 +22,22 @@ import com.love320.templateparser.label.LabelParser;
  *  标签分析器实现类
  */
 public class LabelParserImpl implements LabelParser {
+	
+	private LabelProcess labelProcess;//标签解析核心
+
+	public void setLabelProcess(LabelProcess labelProcess) {
+		this.labelProcess = labelProcess;
+	}
 
 	/* (non-Javadoc)
 	 * @see com.love320.templateparser.label.LabelParser#get(com.love320.templateparser.factory.entity.Label)
 	 */
 	@Override
 	public Label get(Label label) {//标签分析器
-		System.out.println(label.getTemplate());
+		if(label.getType().equals("label")){//标签类型
+			String bodycontent = labelProcess.get(label.getTemplate());//传标签名，返回标签解析后的内容
+			label.setTemplate(bodycontent);//设置解析后的内容
+		}
 		return label;
 	}
 

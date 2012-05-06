@@ -50,7 +50,13 @@
 		</property>
 	</bean>
 	<bean id="xmlToLabel" class="com.love320.templateparser.label.impl.XMLToLabelImpl" />
-	<bean id="labelParser" class="com.love320.templateparser.label.impl.LabelParserImpl" />
+	<bean id="labelParser" class="com.love320.templateparser.label.impl.LabelParserImpl" >
+		<property name="labelProcess">
+			<ref bean="labelProcess" />
+		</property>
+	</bean>
+	<bean id="labelProcess" class="com.love320.templateparser.label.impl.LabelProcessImpl" />
+	
     <!-- 模板解析 end -->
     
     <!-- 以下为测试用 -->
