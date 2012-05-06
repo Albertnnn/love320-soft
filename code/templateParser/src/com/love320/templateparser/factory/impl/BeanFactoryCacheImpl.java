@@ -5,7 +5,7 @@
  * 
  * Founder admin@love320.com
  */
-package com.love320.templateparser.factory.bean.impl;
+package com.love320.templateparser.factory.impl;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import org.dom4j.Node;
 
 import com.love320.templateparser.cache.Cache;
 import com.love320.templateparser.factory.BeanFactory;
-import com.love320.templateparser.factory.bean.BeanString;
+import com.love320.templateparser.factory.entity.BeanString;
 
 /** 
  * @ClassName: BeanFactoryImpl 

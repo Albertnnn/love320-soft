@@ -42,7 +42,7 @@ public class SeparationImpl implements Separation {
 	 * .String)
 	 */
 	@Override
-	public org.w3c.dom.Document getXML(String str) {
+	public String getXML(String str) {
 		Document document = DocumentHelper.createDocument();//初始化xml
 		Element rootElement = document.addElement("root");//设置根目录 root
 		rootElement.addElement("site").setText("www.love320.com");//添加版权 
@@ -51,8 +51,7 @@ public class SeparationImpl implements Separation {
 			 tagStrRow(singStr,contentElement);//分析并解析信息
 			 addContent("/r/n", 3,contentElement);//换行标记
 		}
-		//System.out.println(document.asXML());
-		return null;
+		return document.asXML();//返回xml字符串
 	}
 
 	/**

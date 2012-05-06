@@ -5,7 +5,7 @@
  * 
  * Founder admin@love320.com
  */
-package com.love320.templateparser.factory.bean;
+package com.love320.templateparser.factory.entity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
