@@ -9,6 +9,8 @@
 		</property>
     </bean>
     
+    <bean id="factoryService" class="com.love320.templateparser.factory.impl.FactoryServiceImpl"></bean>
+    
     <!-- 工厂缓存 -->
     <bean id="cache" class="com.love320.templateparser.cache.impl.SysCache"></bean>
     
@@ -59,6 +61,9 @@
 		<property name="labelBeanFactory">
 			<ref bean="labelBeanFactory" />
 		</property>
+		<property name="factoryService">
+			<ref bean="factoryService" />
+		</property>
 	</bean>
 	<bean id="labelBeanFactory" class="com.love320.templateparser.factory.impl.LabelBeanFactoryImpl" >
 		<property name="configPath">
@@ -68,6 +73,10 @@
 	
 	
     <!-- 模板解析 end -->
+    
+    <!-- Label bean -->
+    
+    <!-- Label bean end -->
     
     <!-- 以下为测试用 -->
 

@@ -56,14 +56,14 @@ public class LabelBeanFactoryImpl implements LabelBeanFactory {
 			String name = labelElement.attributeValue("name");
 			String parameters = labelElement.elementText("parameters");
 			String template = labelElement.elementText("template");
-			String classpath = labelElement.elementText("classpath");
+			String bean = labelElement.elementText("bean");
 			String note = labelElement.elementText("note");
 			
 			//设置LabelBean信息
 			labelBean.setName(name);
 			labelBean.setParameters(parameters);
 			labelBean.setTemplate(template);
-			labelBean.setClasspath(classpath);
+			labelBean.setBean(bean);
 			labelBean.setNote(note);
 		}else{
 			labelBean.setName(labelName);
@@ -73,7 +73,7 @@ public class LabelBeanFactoryImpl implements LabelBeanFactory {
 		/*System.out.println(labelBean.getName());
 		System.out.println(labelBean.getParameters());
 		System.out.println(labelBean.getTemplate());
-		System.out.println(labelBean.getClasspath());
+		System.out.println(labelBean.getBean());
 		System.out.println(labelBean.getNote());*/
 		
 		return labelBean;
