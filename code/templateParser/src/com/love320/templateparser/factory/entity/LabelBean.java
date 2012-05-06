@@ -20,7 +20,7 @@ public class LabelBean {
 	private String name ;//标签名
 	private String parameters;//参数
 	private String template;//模板内容
-	private String classpath;//标签类型
+	private String bean;//标签bean
 	private String note;//备注
 	public String getName() {
 		return name;
@@ -35,11 +35,11 @@ public class LabelBean {
 		this.template = template;
 	}
 	
-	public String getClasspath() {
-		return classpath;
+	public String getBean() {
+		return bean;
 	}
-	public void setClasspath(String classpath) {
-		this.classpath = classpath;
+	public void setBean(String bean) {
+		this.bean = bean;
 	}
 	public String getNote() {
 		return note;
