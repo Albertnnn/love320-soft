@@ -12,6 +12,8 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
+import test.factorytest;
+
 import com.love320.templateparser.factory.entity.BeanString;
 import com.love320.templateparser.factory.impl.FactoryBeanImpl;
 import com.love320.templateparser.factory.impl.FactoryImpl;
@@ -50,7 +52,7 @@ public class AppFactory {
 		}
 	}
 
-	public  synchronized Factory getFactory() {
+	public synchronized Factory getFactory() {
 		if(factory == null){
 			//工厂一
 			//factory = new FactoryImpl(DOCROOT).factoryInit();//实例化工厂类并初始化
@@ -59,7 +61,13 @@ public class AppFactory {
 			BeanString bs = new BeanString();
 			bs.setName("beanfactory");
 			bs.setClassName("com.love320.templateparser.factory.impl.BeanFactoryImpl");
-			factory = new FactoryBeanImpl().factoryInit(bs,DOCROOT);//实例化工厂类并初始化
+			if(conPath != null){
+				factory = new FactoryBeanImpl().factoryInit(bs,DOCROOT);//实例化工厂类并初始化
+			}else{//使用系统默认的配置文件
+				conPath = AppFactory.class.getResource("factoryconfig.xml").toString();//设置默认文件路径
+				xmlStr();//读取配置文件到 Element DOCROOT
+				factory = new FactoryBeanImpl().factoryInit(bs,DOCROOT);//实例化工厂类并初始化
+			}
 		}
 		return factory;
 	}

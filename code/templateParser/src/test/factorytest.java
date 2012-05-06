@@ -93,7 +93,7 @@ public class factorytest extends TestCase {
 	
 	public void testBeanTemplate(){
 		AppFactory appfactory = AppFactory.getAppFactory();
-		appfactory.setConPath("bin/factoryconfig.xml");
+		//appfactory.setConPath("bin/factoryconfig.xml");
 		Factory factory = appfactory.getFactory();
 		TemplateProcess templateProcess = (TemplateProcess)factory.getbean("templateProcess");
 		System.out.println(templateProcess.get("bin/homepage.htm"));
