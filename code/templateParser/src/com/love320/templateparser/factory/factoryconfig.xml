@@ -75,7 +75,7 @@
     <!-- 模板解析 end -->
     
     <!-- Label bean -->
-    
+    <bean id="testAction" class="com.love320.templateparser.label.action.TestAction" />
     <!-- Label bean end -->
     
     <!-- 以下为测试用 -->

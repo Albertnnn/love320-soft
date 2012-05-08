@@ -7,9 +7,11 @@
  */
 package com.love320.templateparser.label.impl;
 
+import java.util.Map;
 import com.love320.templateparser.factory.Factory;
 import com.love320.templateparser.factory.LabelBeanFactory;
 import com.love320.templateparser.factory.entity.LabelBean;
+import com.love320.templateparser.label.LabelAction;
 import com.love320.templateparser.label.LabelProcess;
 
 /** 
@@ -38,8 +40,9 @@ public class LabelProcessImpl implements LabelProcess {
 	@Override
 	public String get(String labelName) {
 		LabelBean labelBean = labelBeanFactory.get(labelName);//以标签名获取标签信息对象装载体
-		System.out.println(factoryService.getbean(labelBean.getBean()));
-		System.out.println(labelBean.getTemplate());
+		LabelAction labelAction = (LabelAction)factoryService.getbean(labelBean.getBean());//获取标签处理对象
+		//System.out.println(labelAction.action(data));
+		//System.out.println(labelBean.getTemplate());
 		return labelBean.getTemplate();
 	}
 
