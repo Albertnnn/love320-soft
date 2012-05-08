@@ -6,14 +6,14 @@
     <label name="网站名称 ">
     	<parameters><![CDATA[{"name":"zhangdi","age":19}]]></parameters>
     	<template><![CDATA[zswsdhtgf网站名称]]></template>
-    	<bean>labelProcess</bean>
+    	<bean>testAction</bean>
     	<note>说明书</note>
     </label>
     
     <label name="网站关键字 ">
     	<parameters><![CDATA[{"name":"zhangdi","age":19}]]></parameters>
     	<template><![CDATA[zswsdhtgf网站关键字]]></template>
-    	<bean>labelProcess</bean>
+    	<bean>testAction</bean>
     	<note>说明书</note>
     </label>
 </labels>
