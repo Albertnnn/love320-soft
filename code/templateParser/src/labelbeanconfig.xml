@@ -16,4 +16,11 @@
     	<bean>testAction</bean>
     	<note>说明书</note>
     </label>
+    
+    <label name="站点描述 ">
+    	<parameters><![CDATA[{"name":"zhangdi","age":19}]]></parameters>
+    	<template><![CDATA[zswsdhtgf网站关键字]]></template>
+    	<bean>testAction</bean>
+    	<note>说明书</note>
+    </label>
 </labels>

@@ -49,7 +49,7 @@ public class SeparationImpl implements Separation {
 		Element contentElement = rootElement.addElement("content");//装载模板信息
 		for (String singStr : str.split("\r\n")) {//遍例每一条信息
 			 tagStrRow(singStr,contentElement);//分析并解析信息
-			 addContent("/r/n", 3,contentElement);//换行标记
+			 addContent("/r/n", 3,contentElement);//换行  -- 标记符/r/n
 		}
 		return document.asXML();//返回xml字符串
 	}
@@ -65,6 +65,7 @@ public class SeparationImpl implements Separation {
 					String[] singStrS = singStr.split(tagNamefoot+"}");
 					if (singStrS.length == 2) {
 						addContent(singStrS[0], 2,contentElement);
+						addContent(singStrS[1], 1,contentElement);
 					}else{
 						addContent(singStrS[0], 2,contentElement);
 					}
