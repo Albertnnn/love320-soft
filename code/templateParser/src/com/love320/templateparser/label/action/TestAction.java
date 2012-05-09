@@ -25,7 +25,7 @@ public class TestAction implements LabelAction {
 	 */
 	@Override
 	public Map<String, Object> action(Map<String, Object> data) {
-		System.out.println("处理 成功");
+		//System.out.println("处理 成功"+data);
 		return data;
 	}
 

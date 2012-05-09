@@ -52,9 +52,17 @@ public class TemplateProcessImpl implements TemplateProcess {
 		String tempXML = separation.getXML(templateFileStr);//分离内容与标签并以xml管理，返回xml字符串
 		List<Label> labelList = xmlToLabel.get(tempXML);//从xml数据格式转换为label对象
 		labelList = labelParser.get(labelList);
-		System.out.println(labelList.size());
-		
-		return null;
+		String template = "";//解析后的装载体
+		for(Label label : labelList){
+			String str = label.getTemplate();
+			if(str.equals("/r/n")){ // (换行)--标记符
+				template += "\r\n";// 换行
+			}else{
+				template += str;//拼接解析后的模板字符串
+			}
+			
+		}
+		return template;
 	}
 
 }
