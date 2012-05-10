@@ -4,8 +4,8 @@
     <description>factory</description>
     
     <label name="网站名称 ">
-    	<parameters><![CDATA[{"name":"zhangdi","age":19}]]></parameters>
-    	<template><![CDATA[zswsdhtgf网站名称]]></template>
+    	<parameters><![CDATA[{"name":"zhangdi","age":19,"title":"冰迪网络"}]]></parameters>
+    	<template><![CDATA[{${title}}:name:${name},liaobian:${age}]]></template>
     	<bean>testAction</bean>
     	<note>说明书</note>
     </label>

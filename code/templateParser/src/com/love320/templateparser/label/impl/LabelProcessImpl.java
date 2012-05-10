@@ -14,9 +14,9 @@ import com.love320.templateparser.factory.LabelBeanFactory;
 import com.love320.templateparser.factory.entity.LabelBean;
 import com.love320.templateparser.json.JSONException;
 import com.love320.templateparser.json.JSONObject;
-import com.love320.templateparser.label.ClassForTemplate;
 import com.love320.templateparser.label.LabelAction;
 import com.love320.templateparser.label.LabelProcess;
+import com.love320.templateparser.label.Synthesis;
 
 /** 
  * @ClassName: LabelProcessImpl 
@@ -29,7 +29,7 @@ public class LabelProcessImpl implements LabelProcess {
 	
 	private LabelBeanFactory labelBeanFactory;//标签对应 的信息工厂
 	private Factory factoryService;//bean工厂
-	private ClassForTemplate classForTemplate ;//模板引擎
+	private Synthesis synthesis;//模板引擎  ,数据与模板合成
 	
 	public void setLabelBeanFactory(LabelBeanFactory labelBeanFactory) {
 		this.labelBeanFactory = labelBeanFactory;
@@ -39,8 +39,8 @@ public class LabelProcessImpl implements LabelProcess {
 		this.factoryService = factoryService;
 	}
 	
-	public void setClassForTemplate(ClassForTemplate classForTemplate) {
-		this.classForTemplate = classForTemplate;
+	public void setSynthesis(Synthesis synthesis) {
+		this.synthesis = synthesis;
 	}
 
 	/* (non-Javadoc)
@@ -58,7 +58,7 @@ public class LabelProcessImpl implements LabelProcess {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return classForTemplate.process(data, labelBean.getTemplate());
+		return synthesis.process(data, labelBean.getTemplate());
 	}
 
 }

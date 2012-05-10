@@ -64,8 +64,8 @@
 		<property name="factoryService">
 			<ref bean="factoryService" />
 		</property>
-		<property name="classForTemplate">
-			<ref bean="classForTemplate" />
+		<property name="synthesis">
+			<ref bean="synthesis" />
 		</property>
 	</bean>
 	<bean id="labelBeanFactory" class="com.love320.templateparser.factory.impl.LabelBeanFactoryImpl" >
@@ -74,7 +74,7 @@
 		</property>
 	</bean>
 	
-	<bean id="classForTemplate" class="com.love320.templateparser.label.impl.FreemarkerClassForTemplate" />
+	<bean id="synthesis" class="com.love320.templateparser.label.synthesis.impl.SynthesisFreeMarker" />
 	
     <!-- 模板解析 end -->
     

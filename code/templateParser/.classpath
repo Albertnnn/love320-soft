@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="libpack/jaxen-1.1-beta-6.jar"/>
 	<classpathentry kind="lib" path="libpack/ehcache-core-2.4.6.jar"/>
 	<classpathentry kind="lib" path="libpack/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="libpack/freemarker.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
