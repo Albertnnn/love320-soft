@@ -8,12 +8,12 @@
 package com.love320.templateparser.label;
 
 /** 
- * @ClassName: ClassForTemplate 
+ * @ClassName: Synthesis 
  * @Description: TODO
  * @author love320.com
- * @date 2012-5-9 下午11:00:30 
- *  模板引擎接口
+ * @date 2012-5-10 下午10:57:09 
+ *  数据与模板合成
  */
-public interface ClassForTemplate {
-	public String process(Object data,String template);//数据与模板合成
+public interface Synthesis {
+	public String process(Object object,String templateSource);//合成
 }

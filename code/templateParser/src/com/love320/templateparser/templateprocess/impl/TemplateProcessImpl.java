@@ -20,6 +20,7 @@ public class TemplateProcessImpl implements TemplateProcess {
 	private Separation separation;//分离器(内容与标签分离)
 	private XMLToLabel xmlToLabel;//转换器，从xml数据格式转换为label对象
 	private LabelParser labelParser;//标签分析器
+	
 
 	public void setTemplateDir(String templateDir) {
 		this.templateDir = templateDir;
