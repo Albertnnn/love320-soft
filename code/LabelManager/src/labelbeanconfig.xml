@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<labels>
+    <description>factory</description>
+    
+    <label name="网站名称">
+    	<parameters><![CDATA[{"name":"zhangdi老婆","age":19,"title":"冰迪网络"}]]></parameters>
+    	<template><![CDATA[{${title}}:name:${name},liaobian:${age};www.love320.com, ${systemMap.zhangdi}]]></template>
+    	<bean>testAction</bean>
+    	<note>说明书</note>
+    </label>
+    
+    <label name="网站关键字">
+    	<parameters><![CDATA[{"name":"zhangdi","age":19}]]></parameters>
+    	<template><![CDATA[zswsdhtgf网站关键字]]></template>
+    	<bean>testAbsAction</bean>
+    	<note>说明书</note>
+    </label>
+    
+    <label name="站点描述">
+    	<parameters><![CDATA[{"name":"zhangdi","age":19}]]></parameters>
+    	<template><![CDATA[zswsdhtgf网站关键字]]></template>
+    	<bean>testAction</bean>
+    	<note>说明书</note>
+    </label>
+</labels>
